@@ -12,16 +12,16 @@
 			app.config(function($routeProvider) {
 				$routeProvider
 					.when('/:hashedId', {
-					redirectTo: 'localhost:8080/#/survey/submit/' + hashedId
+					controller: ctrl
 				})
-			})
+			});
 			app.controller('ctrl', function($routeParams) {
 				init();
 				
 				function init(){
 					console.log('localhost:8080/#/survey/submit/' + $routeParams.hashedId);
 				}
-			})
+			});
 		</script>
 	</body>
 </html>
