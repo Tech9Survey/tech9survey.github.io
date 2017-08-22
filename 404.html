@@ -1,4 +1,4 @@
 <script>
   console.log(window.location);
-  window.location.replace('localhost:8080/#/survey/submit/' + window.location.substring(30, window.location.length - 1));
+  window.location.replace('localhost:8080/#/survey/submit/' + window.location.toString().substring(30, window.location.length - 1));
 </script>
