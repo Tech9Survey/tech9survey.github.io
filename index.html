@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html ng-app="app" ng-controller="ctrl">
+<html ng-app="app" ng-controller="ctrl as c">
 	<head>
+    	<base href="/">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
 	</head>
 
 	<body>
+    	<pre>{{c.$routeParams}}</pre>
+    
 		<script>
 			var app = angular.module('app', ['ngRoute']);
-			app.config(function($routeProvider) {
+			app.config(function($routeProvider, $locationProvider) {
+            	$locationProvider.html5Mode(true);
+            
 				$routeProvider
-					.when('/:hashedId', {
-				})
-                	.otherwise({
-                	redirectTo : '/:hashedId'    
-                })
+					.when('/:id', {
+                    
+					});   
 			});
-			app.controller('ctrl', function($scope, $routeParams) {
+			app.controller('ctrl', function($routeParams) {
 				init();
-				
+				this.$routeParams = $routeParams;
 				function init(){
-					console.log('localhost:8080/#/survey/submit/' + $routeParams.hashedId);
+					console.log('localhost:8080/#/survey/submit/' + $routeParams.id);
 				}
 			});
 		</script>
