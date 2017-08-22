@@ -8,18 +8,19 @@
 	<body>
 		<script>
 			console.log('test');
-			angular.module('app', ['ngRoute'])
-				.config(function($routeProvider) {
+			var app = angular.module('app', ['ngRoute']);
+			app.config(function($routeProvider) {
 				$routeProvider
 					.when('/:hashedId', {
-					controller: 'ctrl',
-					resolve: {
-						console.log('test2');
-					}
+					redirectTo: 'localhost:8080/#/survey/submit/' + hashedId
 				})
 			})
-				.controller('ctrl', function($routeParams) {
-				console.log('localhost:8080/#/survey/submit/' + $routeParams.hashedId);
+			app.controller('ctrl', function($routeParams) {
+				init();
+				
+				function init(){
+					console.log('localhost:8080/#/survey/submit/' + $routeParams.hashedId);
+				}
 			})
 		</script>
 	</body>
