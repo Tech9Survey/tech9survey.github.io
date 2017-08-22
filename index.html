@@ -1,34 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="app" ng-controller="ctrl as c">
+<html>
 	<head>
-    	<base href="/">
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+<!-- Will be needed for Facebook sharing
+<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Your Website Title" />
+<meta property="og:description"   content="Your description" />
+<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+-->
 	</head>
 
 	<body>
-    	<pre>{{c.$routeParams}}</pre>
-    
-		<script>
-			var app = angular.module('app', ['ngRoute']);
-			app.config(function($routeProvider, $locationProvider) {
-            	$locationProvider.html5Mode(true);
-            
-				$routeProvider
-					.when('/', {
-                    
-				})
-					.otherwise({
-					redirectTo: '/'	
-				})
-			});
-			app.controller('ctrl', function($routeParams) {
-				init();
-				this.$routeParams = $routeParams;
-				function init(){
-					console.log('localhost:8080/#/survey/submit/' + $routeParams.id);
-				}
-			});
-		</script>
+
 	</body>
 </html>
