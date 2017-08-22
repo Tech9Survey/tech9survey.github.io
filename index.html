@@ -15,9 +15,12 @@
             	$locationProvider.html5Mode(true);
             
 				$routeProvider
-					.when('/:id', {
+					.when('/', {
                     
-					});   
+				})
+					.otherwise({
+					redirectTo: '/'	
+				})
 			});
 			app.controller('ctrl', function($routeParams) {
 				init();
