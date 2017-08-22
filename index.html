@@ -11,11 +11,11 @@
 				.config(function($routeProvider) {
 				$routeProvider
 					.when('/:hashedId', {
-					resolve: {
-						location.replace('localhost:8080/#/survey/submit/' + hashedId);
-						console.log('hello');
-					}
+					controller: 'ctrl'
 				})
+			})
+				.controller('ctrl', function($routeParams) {
+				console.log('localhost:8080/#/survey/submit/' + $routeParams.hashedId);
 			})
 		</script>
 	</body>
