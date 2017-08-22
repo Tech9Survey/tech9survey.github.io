@@ -11,8 +11,6 @@
 				.config(function($routeProvider) {
 				$routeProvider
 					.when('/:hashedId', {
-					controller:'ProjectListController as projectList',
-					templateUrl:'list.html',
 					resolve: {
 						location.replace('localhost:8080/#/survey/submit/' + hashedId);
 						console.log('hello');
