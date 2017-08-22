@@ -1,5 +1,6 @@
 <script>
   console.log(window.location);
   var red = window.location.toString().slice(30,64);
+  console.log(red);
   window.location.replace('localhost:8080/#/survey/submit/' + red);
 </script>
