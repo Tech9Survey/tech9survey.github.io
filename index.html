@@ -60,7 +60,12 @@
 		}(document, "script", "twitter-wjs"));
 	</script>
 	<script>
-		window.location.href = 'http://localhost:8080/#/survey/submit/' + window.location.toString().slice(32,64);
+		if(window.location.toString.length > 32) {
+			window.location.href = 'http://localhost:8080/#/survey/submit/' + window.location.toString().slice(32,64);
+		}
+		else {
+			window.location.href = 'http://localhost:8080/#/';
+		}
 	</script>
 	</body>
 </html>
